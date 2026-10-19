@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMP-R Digital & Media Solutions Corp.</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="grid-bg">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="./videos/Free Universe Stars Video Gif Animated Zoom Virtual Background.mp4" type="video/mp4">
+    </video>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#home">
+                <div class="nav-logo-box">
+                    <img src="./images/LOGO.png" alt="EMP-R Logo">
+                </div>
+            </a>
+            
+            <button class="navbar-toggler text-white border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-2 text-teal"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#goals">Goals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#updates">Updates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                </ul>
+                <button class="btn btn-quote" data-bs-toggle="modal" data-bs-target="#quoteModal">GET QUOTE</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section text-center">
+        <div class="container">
+            <div class="hero-tagline mb-4">EMPOWERING IDEAS • INNOVATING EXCELLENCE</div>
+            <h1 class="hero-title mb-4">TECHNOLOGY IS A <span class="text-outline">BRIDGE</span> TO INFINITE POSSIBILITIES.</h1>
+            <p class="bible-verse mb-4">"We can do all things through Christ who strengthens us" <span class="text-teal small">(PHILIPPIANS 4:13)</span></p>
+            <p class="hero-subtext mb-5">Your One-Stop Digital Hub for Media, Merch, Creative, Tech, and Systems.</p>
+        </div>
+    </section>
+
+    <!-- SERVICE RIBBON -->
+    <div class="container mb-5 pb-5">
+        <div class="row g-2 justify-content-center text-center">
+            <div class="col-6 col-md-2"><div class="svc-pill"><span class="pill-dot bg-merch"></span>MERCH</div></div>
+            <div class="col-6 col-md-2"><div class="svc-pill"><span class="pill-dot bg-creative"></span>CREATIVE</div></div>
+            <div class="col-6 col-md-2"><div class="svc-pill"><span class="pill-dot bg-systems"></span>SYSTEMS</div></div>
+            <div class="col-6 col-md-2"><div class="svc-pill"><span class="pill-dot bg-tech"></span>TECH</div></div>
+            <div class="col-6 col-md-2"><div class="svc-pill"><span class="pill-dot bg-media"></span>MEDIA</div></div>
+        </div>
+    </div>
+
+    <!-- CONSOLIDATED GOALS SECTION -->
+    <section id="goals" class="py-5">
+        <div class="container">
+            <!-- TOP PART: WHO WE ARE & VISION/MISSION -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h6 class="text-teal mb-3">WHO WE ARE</h6>
+                    <h2 class="display-5 fw-bold mb-4">A Faith-Driven Partner in the <span class="text-teal">Digital Landscape</span></h2>
+                    <div class="verse-box mb-4">
+                        <p class="mb-0 text-white fw-bold">"We can do all things through Christ who strengthens us" (Philippians 4:13)</p>
+                    </div>
+                    <p class="visible-body-text mb-4">Founded on the principle that modern innovation should be accessible and purposeful, we serve as a comprehensive partner for individuals and businesses navigating the digital world.</p>
+                    <div class="mt-4">
+                        <span class="text-teal small fw-bold">THE FOUNDERS:</span>
+                        <div class="d-flex gap-2 mt-2">
+                            <span class="badge bg-founder">Er</span>
+                            <span class="badge bg-founder">Marife</span>
+                            <span class="badge bg-founder">Philip</span>
+                            <span class="badge bg-founder">Reymark</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 mt-4 mt-lg-0">
+                    <div class="emp-card p-4 mb-3">
+                        <i class="bi bi-eye fs-2 text-teal"></i>
+                        <h4 class="mt-3 text-white">Vision</h4>
+                        <p class="visible-body-text small">To be the premier one-stop digital hub recognized for transforming ideas into reality.</p>
+                    </div>
+                    <div class="emp-card p-4">
+                        <i class="bi bi-bullseye fs-2 text-teal"></i>
+                        <h4 class="mt-3 text-white">Mission</h4>
+                        <p class="visible-body-text small">To deliver excellent, reliable, and God-honoring IT and creative services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTER HEADING -->
+            <div class="text-center py-5 my-4">
+                <h2 class="display-4 fw-bold text-white">OUR STRATEGIC GOALS</h2>
+            </div>
+
+            <!-- BOTTOM PART: 3 STRATEGIC GOAL CARDS -->
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="emp-card p-4 h-100 text-start">
+                        <span class="goal-number d-block mb-3">01 / STRATEGIC</span>
+                        <h5 class="text-teal mb-3">GLOBAL OUTREACH</h5>
+                        <p class="visible-body-text small">Build a premier, high-integrity brand merging technology and creative excellence for global scale.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="emp-card p-4 h-100 text-start">
+                        <span class="goal-number d-block mb-3">02 / STRATEGIC</span>
+                        <h5 class="text-teal mb-3">SECURE WORKFLOWS</h5>
+                        <p class="visible-body-text small">Achieve sustainable growth through standardized, secure workflows and recurring revenue.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="emp-card p-4 h-100 text-start">
+                        <span class="goal-number d-block mb-3">03 / STRATEGIC</span>
+                        <h5 class="text-teal mb-3">FAITH-DRIVEN</h5>
+                        <p class="visible-body-text small">Cultivate a God-honoring collaborative culture that empowers innovation with integrity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- FACEBOOK UPDATES & SOCIAL HUB -->
+<section id="updates" class="py-5">
+    <div class="container text-center">
+        
+        <h6 class="text-teal mb-2">LIVE SOCIAL HUB</h6>
+        <h2 class="display-4 fw-bold mb-3">LATEST FROM FACEBOOK</h2>
+        <p class="visible-body-text mb-5 max-w-600 mx-auto">
+            Stay updated with our latest client turn-overs, live production highlights, and tech updates.
+        </p>
+
+        <!-- Facebook Official Page Profile Banner -->
+        <div class="fb-profile-banner mb-5 p-4 mx-auto">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                <div class="d-flex align-items-center text-start gap-3">
+                    <div class="fb-avatar-box">
+                        <img src="./images/LOGO.png" alt="EMP-R" class="fb-avatar-img">
+                    </div>
+                    <div>
+                        <div class="d-flex align-items-center gap-2">
+                            <h5 class="text-white mb-0 fw-bold">EMP-R Digital & Media Solutions</h5>
+                            <i class="bi bi-patch-check-fill text-primary" title="Official Page"></i>
+                        </div>
+                        <span class="text-teal small">@emprdigitalsolutions • Media, Tech & Creative Solutions</span>
+                    </div>
+                </div>
+                
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="btn btn-fb-follow-live">
+                    <i class="bi bi-facebook me-2"></i> FOLLOW US ON FACEBOOK
+                </a>
+            </div>
+        </div>
+
+        <!-- POSTS WILL AUTOMATICALLY APPEAR HERE -->
+        <div class="row g-4 text-start" id="facebookPostsContainer"></div>
+
+    </div>
+</section>
+
+    <!-- (5 PILLARS OF SERVICE) WITH CREATIVE CYBER BUTTONS -->
+    <section id="services" class="py-5">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold mb-5">5 PILLARS OF SERVICE</h2>
+            <div class="row g-4">
+
+                <!-- MERCH -->
+                <div class="col-md-4 col-lg">
+                    <div class="emp-card p-4 h-100 pillar-card">
+                        <div class="pillar-img-box glow-merch">
+                            <img src="./images/merch.png" alt="EMP-R Merch" class="pillar-img">
+                        </div>
+                        <h5 class="mt-3 text-white fw-bold">EMP-R MERCH</h5>
+                        <p class="visible-body-text small mb-4">Custom apparel, giveaways, and precision printing.</p>
+                        <a href="javascript:void(0)" class="btn-scope-cyber btn-scope-merch" data-bs-toggle="modal" data-bs-target="#pillarModal" data-pillar="merch">
+                            <span>SCOPE & RATES</span>
+                            <i class="bi bi-arrow-right-short"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CREATIVE -->
+                <div class="col-md-4 col-lg">
+                    <div class="emp-card p-4 h-100 pillar-card border-creative">
+                        <div class="pillar-img-box glow-creative">
+                            <img src="./images/creative.png" alt="EMP-R Creative" class="pillar-img">
+                        </div>
+                        <h5 class="mt-3 text-white fw-bold">EMP-R CREATIVE</h5>
+                        <p class="visible-body-text small mb-4">Building visual identity and branding strategies.</p>
+                        <a href="javascript:void(0)" class="btn-scope-cyber btn-scope-creative" data-bs-toggle="modal" data-bs-target="#pillarModal" data-pillar="creative">
+                            <span>SCOPE & RATES</span>
+                            <i class="bi bi-arrow-right-short"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SYSTEMS -->
+                <div class="col-md-6 col-lg">
+                    <div class="emp-card p-4 h-100 pillar-card">
+                        <div class="pillar-img-box glow-systems">
+                            <img src="./images/system.png" alt="EMP-R Systems" class="pillar-img">
+                        </div>
+                        <h5 class="mt-3 text-white fw-bold">EMP-R SYSTEMS</h5>
+                        <p class="visible-body-text small mb-4">Custom website creation and software development.</p>
+                        <a href="javascript:void(0)" class="btn-scope-cyber btn-scope-systems" data-bs-toggle="modal" data-bs-target="#pillarModal" data-pillar="systems">
+                            <span>SCOPE & RATES</span>
+                            <i class="bi bi-arrow-right-short"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TECH -->
+                <div class="col-md-6 col-lg">
+                    <div class="emp-card p-4 h-100 pillar-card">
+                        <div class="pillar-img-box glow-tech">
+                            <img src="./images/tech.png" alt="EMP-R Tech" class="pillar-img">
+                        </div>
+                        <h5 class="mt-3 text-white fw-bold">EMP-R TECH</h5>
+                        <p class="visible-body-text small mb-4">Reliable networking, support, and infrastructure.</p>
+                        <a href="javascript:void(0)" class="btn-scope-cyber btn-scope-tech" data-bs-toggle="modal" data-bs-target="#pillarModal" data-pillar="tech">
+                            <span>SCOPE & RATES</span>
+                            <i class="bi bi-arrow-right-short"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MEDIA -->
+                <div class="col-md-4 col-lg">
+                    <div class="emp-card p-4 h-100 pillar-card">
+                        <div class="pillar-img-box glow-media">
+                            <img src="./images/media.png" alt="EMP-R Media" class="pillar-img">
+                        </div>
+                        <h5 class="mt-3 text-white fw-bold">EMP-R MEDIA</h5>
+                        <p class="visible-body-text small mb-4">Professional production and high-quality livestreaming.</p>
+                        <a href="javascript:void(0)" class="btn-scope-cyber btn-scope-media" data-bs-toggle="modal" data-bs-target="#pillarModal" data-pillar="media">
+                            <span>SCOPE & RATES</span>
+                            <i class="bi bi-arrow-right-short"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+ <!-- THE ABOUT SECTION (FOOTER) -->
+<footer id="about" class="footer-corporate py-5">
+    <div class="container">
+        
+        <!-- 1. STANDALONE PROMINENT CENTER LOGO (BREAKS FREE FROM GRID) -->
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+                <div class="footer-hero-logo-wrap">
+                    <img src="./images/LOGO.png" alt="EMP-R Logo" class="footer-hero-big-logo">
+                </div>
+                
+                <h4 class="text-white fw-bold mt-3 mb-1">EMP-R Digital & Media Solutions Corp.</h4>
+                <div class="footer-tagline-text mb-3">EMPOWERING IDEAS • INNOVATING EXCELLENCE</div>
+                
+                <!-- Centered Italic Verse -->
+                <div class="footer-center-verse">
+                    <p class="mb-1 text-white fst-italic">
+                        "We can do all things through Christ who strengthens us"
+                    </p>
+                    <span class="text-teal fw-bold fst-italic">(PHILIPPIANS 4:13)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. TWO BALANCED CARDS BELOW (LEFT & RIGHT) -->
+        <div class="row g-4 justify-content-center">
+            
+            <!-- LEFT: DIRECT INQUIRIES -->
+            <div class="col-lg-5 col-md-6 text-start">
+                <div class="footer-info-panel h-100">
+                    <h6 class="footer-panel-title mb-3">
+                        <i class="bi bi-headset text-teal me-2"></i>DIRECT INQUIRIES
+                    </h6>
+
+                    <ul class="footer-contact-list list-unstyled mb-3">
+                        <li class="mb-2">
+                            <a href="tel:09243765730" class="contact-pill-link">
+                                <i class="bi bi-phone-fill text-teal"></i>
+                                <span>0924 376 5730</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="tel:0325053783" class="contact-pill-link">
+                                <i class="bi bi-telephone-fill text-teal"></i>
+                                <span>(032) 505-3783</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="mailto:emprdigitalsolutions26@gmail.com" class="contact-pill-link">
+                                <i class="bi bi-envelope-fill text-teal"></i>
+                                <span>emprdigitalsolutions26@gmail.com</span>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="contact-pill-link">
+                                <i class="bi bi-facebook text-teal"></i>
+                                <span>EMP-R Digital & Media Solutions</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2 flex-wrap pt-2 border-top border-secondary border-opacity-10">
+                        <button class="btn btn-footer-quote" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                            <i class="bi bi-calculator me-1"></i> REQUEST QUOTE
+                        </button>
+
+                        <div class="d-flex gap-2 ms-auto">
+                            <a href="https://www.facebook.com/profile.php?id=61592112803025" target="_blank" rel="noopener noreferrer" class="social-round-btn" aria-label="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/emprdigitalsolutions/" target="_blank" rel="noopener noreferrer" class="social-round-btn" aria-label="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@emprdigitalsolutions" target="_blank" rel="noopener noreferrer" class="social-round-btn" aria-label="TikTok">
+                                <i class="bi bi-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: WE'RE LOCATED AT -->
+            <div class="col-lg-5 col-md-6 text-start">
+                <div class="footer-info-panel h-100">
+                    <h6 class="footer-panel-title mb-3">
+                        <i class="bi bi-geo-alt-fill text-teal me-2"></i>WE'RE LOCATED AT
+                    </h6>
+
+                    <div class="footer-location-details mb-4">
+                        <strong class="text-white d-block fs-6 mb-1">Benedicto College Building</strong>
+                        <div class="text-slate small mb-2">Room 1 (Right Wing), 2nd Floor</div>
+                        <div class="text-slate small mb-1">A.S. Fortuna Street, Barangay Bakilid</div>
+                        <div class="text-white small fw-bold">Mandaue City, Cebu 6014</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider-subtle my-5">
+
+        <!-- Copyright (Centered) -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <span class="footer-copyright-statement">
+                    © 2026 EMP-R DIGITAL & MEDIA SOLUTIONS CORP. ALL RIGHTS RESERVED.
+                </span>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <!-- CONSULTATION WIZARD MODAL -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content wizard-container">
+                
+                <div class="modal-header border-0 p-4 pb-0">
+                    <div class="d-flex align-items-center w-100">
+                        <div class="wizard-icon-box me-3">
+                            <i class="bi bi-calculator"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="wizard-tagline">PROJECT CONSULTATION WIZARD</div>
+                            <h3 class="wizard-main-title">Get Custom Estimate & Quote</h3>
+                        </div>
+                        <button type="button" class="btn-close-custom" data-bs-dismiss="modal">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-body p-4 custom-wizard-scroll">
+                    <form id="quoteForm">
+    
+    <!-- Section: Service Pillars -->
+    <label class="wizard-section-label">SELECT REQUIRED SERVICE PILLARS (SELECT 1 OR MORE)</label>
+    <div class="pillar-flex-container mb-4" id="pillarsContainer">
+        <div class="pillar-item active" onclick="this.classList.toggle('active')">
+            EMP-R MEDIA <i class="bi bi-check2"></i>
+        </div>
+        <div class="pillar-item" onclick="this.classList.toggle('active')">
+            EMP-R MERCH <i class="bi bi-check2"></i>
+        </div>
+        <div class="pillar-item" onclick="this.classList.toggle('active')">
+            EMP-R CREATIVE <i class="bi bi-check2"></i>
+        </div>
+        <div class="pillar-item" onclick="this.classList.toggle('active')">
+            EMP-R TECH <i class="bi bi-check2"></i>
+        </div>
+        <div class="pillar-item" onclick="this.classList.toggle('active')">
+            EMP-R SYSTEMS <i class="bi bi-check2"></i>
+        </div>
+    </div>
+
+    <!-- Section: Input Grid -->
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label class="wizard-input-label">YOUR NAME *</label>
+            <input type="text" name="Client Name" required class="form-control wizard-input" placeholder="e.g. Juan Dela Cruz">
+        </div>
+        <div class="col-md-6">
+            <label class="wizard-input-label">EMAIL ADDRESS *</label>
+            <input type="email" name="Client Email" required class="form-control wizard-input" placeholder="e.g. client@company.com">
+        </div>
+        <div class="col-md-6">
+            <label class="wizard-input-label">PHONE / CONTACT NUMBER</label>
+            <input type="text" name="Phone Number" class="form-control wizard-input" placeholder="+63 917 000 0000">
+        </div>
+        <div class="col-md-6">
+            <label class="wizard-input-label">COMPANY / ORGANIZATION</label>
+            <input type="text" name="Company" class="form-control wizard-input" placeholder="e.g. Acme Corp">
+        </div>
+        <div class="col-md-6">
+            <label class="wizard-input-label">TARGET BUDGET RANGE</label>
+            <input type="text" name="Budget Range" class="form-control wizard-field-dark" placeholder="e.g. ₱10,000 - ₱15,000">
+        </div>
+        <div class="col-md-6">
+            <label class="wizard-input-label">DESIRED TIMELINE</label>
+            <input type="text" name="Timeline" class="form-control wizard-field-dark" placeholder="e.g. End of August">
+        </div>
+        <div class="col-12">
+            <label class="wizard-input-label">PROJECT DETAILS / SPECIFIC REQUESTS</label>
+            <textarea name="Project Details" class="form-control wizard-input" rows="4" placeholder="Describe your event, print specifications, branding needs, network scope, or web app features..."></textarea>
+        </div>
+        <!-- Submit Button -->
+        <div class="mt-4 text-end">
+            <button type="submit" class="btn btn-wizard-submit px-5 py-3">SUBMIT</button>
+        </div>
+    </div>
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PILLAR EXPLORER MODAL -->
+    <div class="modal fade" id="pillarModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content explorer-modal-frame">
+                
+                <div class="modal-header border-0 p-4 pb-0 position-relative">
+                    <div class="d-flex align-items-start w-100">
+                        <div class="explorer-brand-icon me-3" id="modalIcon">
+                            <!-- Populated with Image by JS -->
+                        </div>
+                        <div class="flex-grow-1">
+                            <div class="explorer-pill-tag">PILLAR EXPLORER</div>
+                            <h3 class="explorer-main-title" id="modalTitle">EMP-R Pillar</h3>
+                            <p class="explorer-subtext" id="modalSubtext">Loading details...</p>
+                        </div>
+                        <button type="button" class="explorer-close-btn" data-bs-dismiss="modal">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-body p-4 pt-2">
+                    <div class="explorer-nav-tabs mb-4">
+                        <button class="explorer-tab active">CAPABILITIES</button>
+                        <button class="explorer-tab">PACKAGES & PRICING</button>
+                        <button class="explorer-tab">DELIVERABLES</button>
+                    </div>
+
+                    <div class="explorer-divider mb-4"></div>
+
+                    <div class="explorer-scroll-area">
+                        <div class="explorer-desc-box mb-4" id="modalLongDesc"></div>
+
+                        <div class="explorer-features-label mb-3">
+                            <i class="bi bi-stars"></i> KEY FEATURES & SOLUTIONS
+                        </div>
+
+                        <div class="row g-3 px-1" id="modalFeaturesGrid"></div>
+                    </div>
+
+                    <div class="modal-footer border-0 p-4 d-flex justify-content-between align-items-center">
+                        <div class="explorer-footer-note">Official Pillar of EMP-R Digital & Media Solutions Corp.</div>
+                        <button class="btn explorer-inquire-btn" data-bs-toggle="modal" data-bs-target="#quoteModal">
+                            <i class="bi bi-send-fill me-2"></i> <span id="modalInquireBtnText">INQUIRE</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="posts.js"></script> <!-- ADD THIS LINE -->
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>

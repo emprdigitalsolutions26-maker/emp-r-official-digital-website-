@@ -1,0 +1,1060 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & ROOT
+   ========================================================================== */
+:root {
+    --bg-dark: #050a18;
+    --bg-card: #0c1529;
+    --bg-navy-input: #0a1122;
+    --teal: #4fd1ed;
+    --text-slate: #cbd5e1;
+    /* Brand Pillars */
+    --media: #dc3545;
+    --merch: #ffc107;
+    --creative: #a855f7;
+    --tech: #007bff;
+    --systems: #28a745;
+}
+
+/* ==========================================================================
+   2. BASE BODY & LAYOUT
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Background overlay so text is crisp over video */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 8, 23, 0.45);
+    z-index: -1; 
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    background-color: #050a18;
+}
+
+section {
+    scroll-margin-top: 100px; 
+}
+
+.grid-bg {
+    background-image: linear-gradient(rgba(79, 209, 237, 0.04) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(79, 209, 237, 0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-attachment: fixed;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY & UTILITIES
+   ========================================================================== */
+.display-4.fw-bold {
+    font-size: clamp(2.3rem, 5vw, 3.5rem) !important;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px !important;
+}
+
+h6.text-teal {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-weight: 800;
+    margin-bottom: 15px !important;
+}
+
+.visible-body-text {
+    color: var(--text-slate) !important;
+    opacity: 1 !important;
+    line-height: 1.7;
+}
+
+.text-teal { color: var(--teal) !important; }
+
+.bg-founder {
+    background: rgba(79, 209, 237, 0.1);
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+/* ==========================================================================
+   4. NAVIGATION BAR
+   ========================================================================== */
+.navbar {
+    background: rgba(5, 10, 24, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(79, 209, 237, 0.15);
+    transition: all 0.3s ease;
+}
+
+.nav-logo-box img { 
+    height: 65px;
+    filter: drop-shadow(1px 1px 0px #c6d7da) 
+            drop-shadow(-1px -1px 0px #91bcc0) 
+            drop-shadow(1px -1px 0px #d9f0f3) 
+            drop-shadow(-1px 1px 0px #f7fafa);
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link:hover {
+    color: var(--teal) !important;
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--teal);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+    width: 100% !important;
+}
+
+.nav-link.active {
+    color: var(--teal) !important;
+}
+
+.btn-quote {
+    background: var(--teal);
+    color: #000 !important;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 10px 25px;
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(79, 209, 237, 0.4);
+    transition: 0.3s ease;
+}
+
+.btn-quote:hover {
+    box-shadow: 0 0 30px rgba(79, 209, 237, 0.7);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. HERO SECTION
+   ========================================================================== */
+.hero-section { padding: 120px 0 80px; }
+
+.hero-tagline {
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.8rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.text-outline { -webkit-text-stroke: 1.5px var(--teal); color: transparent; }
+.hero-subtext { color: var(--text-slate); font-size: 1.3rem; opacity: 0.9; }
+
+/* ==========================================================================
+   6. COMPONENTS (CARDS & PILLS)
+   ========================================================================== */
+.emp-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(79, 209, 237, 0.15);
+    border-radius: 15px;
+    transition: 0.3s ease;
+}
+
+.emp-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.svc-pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+
+.pill-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px; }
+.bg-media { background: var(--media); } .text-media { color: var(--media); }
+.bg-merch { background: var(--merch); } .text-merch { color: var(--merch); }
+.bg-creative { background-color: var(--creative); } .text-creative { color: var(--creative); }
+.bg-tech { background: var(--tech); } .text-tech { color: var(--tech); }
+.bg-systems { background: var(--systems); } .text-systems { color: var(--systems); }
+
+/* ==========================================================================
+   7. GOALS SECTION
+   ========================================================================== */
+#goals { padding-top: 100px !important; padding-bottom: 80px !important; }
+.goal-number { color: var(--teal); font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; opacity: 0.8; }
+.verse-box { border-left: 4px solid var(--teal); padding-left: 20px; margin: 20px 0; }
+
+/* ==========================================================================
+   8. FACEBOOK & SOCIAL UPDATES SECTION
+   ========================================================================== */
+.max-w-600 { max-width: 650px; }
+
+.fb-brand-header {
+    background: linear-gradient(135deg, rgba(13, 27, 53, 0.9) 0%, rgba(8, 17, 36, 0.95) 100%);
+    border: 1px solid rgba(79, 209, 237, 0.25);
+    border-radius: 16px;
+    max-width: 850px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(79, 209, 237, 0.05);
+}
+
+.fb-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--teal);
+}
+
+.btn-fb-follow {
+    background: #1877F2;
+    color: #ffffff !important;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 10px 24px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
+}
+
+.btn-fb-follow:hover {
+    background: #166fe5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.6);
+}
+
+.fb-post-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fb-post-date {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.fb-post-media {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.fb-media-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(12, 21, 41, 0.6) 0%, rgba(5, 10, 24, 0.8) 100%);
+    transition: transform 0.4s ease;
+}
+
+.fb-post-card:hover .fb-media-placeholder {
+    transform: scale(1.05);
+}
+
+.fb-stat {
+    font-size: 0.85rem;
+    color: var(--text-slate);
+    font-weight: 600;
+}
+
+.fb-read-more {
+    color: var(--teal);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 800;
+    transition: all 0.2s ease;
+}
+
+.fb-read-more:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+    display: inline-block;
+}
+
+/* ==========================================================================
+   9. PILLAR CUSTOM IMAGE BADGES & HOVER
+   ========================================================================== */
+.pillar-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pillar-img-box {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    transition: all 0.35s ease;
+}
+
+.pillar-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.35s ease;
+}
+
+.pillar-card:hover .pillar-img-box {
+    transform: translateY(-4px);
+}
+.pillar-card:hover .pillar-img {
+    transform: scale(1.15);
+}
+
+.pillar-card:hover .glow-media {
+    border-color: #dc3545;
+    box-shadow: 0 0 25px rgba(220, 53, 69, 0.5);
+}
+.pillar-card:hover .glow-merch {
+    border-color: #ffc107;
+    box-shadow: 0 0 25px rgba(255, 193, 7, 0.5);
+}
+.pillar-card:hover .glow-creative {
+    border-color: #a855f7;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+}
+.pillar-card:hover .glow-tech {
+    border-color: #007bff;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.5);
+}
+.pillar-card:hover .glow-systems {
+    border-color: #28a745;
+    box-shadow: 0 0 25px rgba(40, 167, 69, 0.5);
+}
+
+/* ==========================================================================
+   10. CREATIVE CYBER BUTTONS FOR PILLARS
+   ========================================================================== */
+.btn-scope-cyber {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    margin-top: auto;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-scope-cyber i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.btn-scope-cyber:hover i {
+    transform: translateX(5px);
+}
+
+.btn-scope-cyber:hover {
+    transform: translateY(-2px);
+}
+
+.btn-scope-cyber:active {
+    transform: scale(0.97);
+}
+
+/* MEDIA (Crimson) */
+.btn-scope-media {
+    color: #ff5364;
+    border-color: rgba(220, 53, 69, 0.4);
+}
+.btn-scope-media:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #dc3545 0%, #a71d2a 100%);
+    border-color: #dc3545;
+    box-shadow: 0 0 25px rgba(220, 53, 69, 0.6), 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* MERCH (Gold/Amber) */
+.btn-scope-merch {
+    color: #ffd043;
+    border-color: rgba(255, 193, 7, 0.4);
+}
+.btn-scope-merch:hover {
+    color: #000000;
+    background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+    border-color: #ffc107;
+    box-shadow: 0 0 25px rgba(255, 193, 7, 0.6), 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* CREATIVE (Purple) */
+.btn-scope-creative {
+    color: #c084fc;
+    border-color: rgba(168, 85, 247, 0.4);
+}
+.btn-scope-creative:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    border-color: #a855f7;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6), 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* TECH (Electric Blue) */
+.btn-scope-tech {
+    color: #60a5fa;
+    border-color: rgba(0, 123, 255, 0.4);
+}
+.btn-scope-tech:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border-color: #007bff;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.6), 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* SYSTEMS (Emerald Green) */
+.btn-scope-systems {
+    color: #4ade80;
+    border-color: rgba(40, 167, 69, 0.4);
+}
+.btn-scope-systems:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+    border-color: #28a745;
+    box-shadow: 0 0 25px rgba(40, 167, 69, 0.6), 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* ==========================================================================
+   STANDALONE PROMINENT LOGO & CARDS
+   ========================================================================== */
+.footer-corporate {
+    background-color: #050a18;
+    border-top: 1px solid rgba(79, 209, 237, 0.15);
+    position: relative;
+    z-index: 10;
+    padding-top: 50px;
+    padding-bottom: 35px;
+}
+
+/* BIG HERO LOGO AT TOP */
+.footer-hero-logo-wrap {
+    margin-top: -20px;
+    display: inline-block;
+}
+
+/* CLEAN WHITE OUTLINE LOGO */
+.footer-hero-big-logo {
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+    /* Layered multi-directional shadows create a crisp, sharp 1.5px white outline */
+    filter: drop-shadow(1.5px 0 0 #ffffff)
+            drop-shadow(-1.5px 0 0 #ffffff)
+            drop-shadow(0 1.5px 0 #ffffff)
+            drop-shadow(0 -1.5px 0 #ffffff)
+            drop-shadow(0 0 5px rgba(255, 255, 255, 0.25));
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover: Slightly bolder outline with a pure white lift */
+.footer-hero-big-logo:hover {
+    transform: scale(1.05) translateY(-4px);
+    filter: drop-shadow(2px 0 0 #ffffff)
+            drop-shadow(-2px 0 0 #ffffff)
+            drop-shadow(0 2px 0 #ffffff)
+            drop-shadow(0 -2px 0 #ffffff)
+            drop-shadow(0 0 16px rgba(255, 255, 255, 0.45));
+}
+
+.footer-tagline-text {
+    color: var(--teal);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Centered Italic Verse */
+.footer-center-verse {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(79, 209, 237, 0.25);
+    border-radius: 12px;
+    padding: 12px 24px;
+    display: inline-block;
+    max-width: 480px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(79, 209, 237, 0.04);
+}
+
+.footer-center-verse p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    letter-spacing: 0.4px;
+}
+
+.footer-center-verse span {
+    letter-spacing: 1.2px;
+}
+
+/* Info Cards Below */
+.footer-info-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 26px;
+}
+
+.footer-panel-title {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.contact-pill-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.contact-pill-link i {
+    font-size: 1.1rem;
+    width: 22px;
+    text-align: center;
+}
+
+.contact-pill-link:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.contact-pill-link:hover i {
+    text-shadow: 0 0 10px var(--teal);
+}
+
+.btn-footer-quote {
+    background: var(--teal);
+    color: #000000;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    padding: 9px 20px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-footer-quote:hover {
+    background: #26f2ff;
+    box-shadow: 0 0 18px rgba(79, 209, 237, 0.6);
+    transform: translateY(-2px);
+}
+
+.social-round-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+}
+
+.social-round-btn:hover {
+    background: var(--teal);
+    color: #000;
+    border-color: var(--teal);
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(79, 209, 237, 0.5);
+}
+
+.footer-location-details {
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+.bg-location-pin {
+    background: rgba(79, 209, 237, 0.08);
+    border: 1px solid rgba(79, 209, 237, 0.2);
+    color: #cbd5e1;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 7px 14px;
+    border-radius: 6px;
+}
+
+.footer-divider-subtle {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+.footer-copyright-statement {
+    color: #64748b;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+/* ==========================================================================
+   12. PROJECT CONSULTATION WIZARD (MODAL)
+   ========================================================================== */
+.wizard-container {
+    background-color: #0B2444 !important;
+    border: 1px solid rgba(0,212,255,.2) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 40px rgba(0,212,255,.08);
+}
+
+.wizard-icon-box {
+    width: 55px; 
+    height: 55px;
+    border: 1.5px solid var(--teal); 
+    border-radius: 12px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: var(--teal); 
+    font-size: 1.5rem;
+    box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+.wizard-tagline {
+    color: var(--teal); 
+    font-size: .82rem; 
+    font-weight: 800;
+    letter-spacing: 1.2px; 
+    text-transform: uppercase;
+}
+
+.wizard-main-title { font-size: 1.8rem; font-weight: 900; color: white; }
+
+.wizard-section-label,
+.wizard-input-label {
+    font-size: .78rem; 
+    color: #C4D2E0; 
+    font-weight: 800;
+    letter-spacing: .3px; 
+    text-transform: uppercase;
+}
+
+.wizard-input,
+.wizard-field-dark {
+    background: #1A3553 !important;
+    border: 1px solid rgba(255,255,255,.1) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 12px 15px;
+}
+
+.wizard-input:focus,
+.wizard-field-dark:focus { 
+    border-color: var(--teal) !important; 
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3) !important; 
+    outline: none !important;
+}
+
+.pillar-flex-container { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.pillar-item {
+    height: 46px; 
+    min-width: 160px; 
+    border-radius: 10px;
+    background: #1B3655; 
+    border: 1px solid rgba(255,255,255,.1);
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 0 18px; 
+    color: #fff; 
+    font-size: .85rem; 
+    font-weight: 700; 
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.pillar-item.active {
+    background: #135B86; 
+    border-color: var(--teal);
+    box-shadow: 0 0 15px rgba(0,212,255,.2);
+}
+
+.pillar-item i { display: none; color: var(--teal); }
+.pillar-item.active i { display: inline-block; }
+
+.btn-wizard-submit {
+    background-color: var(--teal) !important;
+    color: #000000 !important;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-wizard-submit:hover {
+    background-color: #26f2ff !important;
+    box-shadow: 0 0 35px rgba(0, 229, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-close-custom {
+    width: 38px; 
+    height: 38px; 
+    border-radius: 50%;
+    background: #193A59; 
+    color: #8FA7BC; 
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-close-custom:hover { color: white; background: #234A6D; }
+
+/* ==========================================================================
+   13. PILLAR EXPLORER (MODAL)
+   ========================================================================== */
+.explorer-modal-frame {
+    background-color: #020c1b !important;
+    border: 1.5px solid var(--teal) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 0 50px rgba(0, 229, 255, 0.2) !important;
+}
+
+.explorer-brand-icon {
+    width: 60px;
+    height: 60px;
+    border: 1.5px solid var(--teal);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+.explorer-modal-icon-img {
+    max-width: 38px;
+    max-height: 38px;
+    object-fit: contain;
+}
+
+.explorer-pill-tag {
+    color: var(--teal);
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.explorer-main-title {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.explorer-subtext {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.explorer-close-btn {
+    background: #1a2a44;
+    border: none;
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explorer-nav-tabs { display: flex; gap: 12px; }
+
+.explorer-tab {
+    background: #16243d;
+    border: none;
+    color: #94a3b8;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.explorer-tab.active {
+    background-color: var(--teal) !important;
+    color: #000 !important;
+}
+
+.explorer-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.explorer-desc-box {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    color: #cbd5e1;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.explorer-feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.explorer-feature-card i {
+    color: var(--teal);
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.explorer-scroll-area {
+    max-height: 48vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.explorer-scroll-area::-webkit-scrollbar { width: 6px; }
+.explorer-scroll-area::-webkit-scrollbar-thumb {
+    background: var(--teal);
+    border-radius: 10px;
+}
+
+.explorer-inquire-btn {
+    background: var(--teal) !important;
+    color: #000 !important;
+    font-weight: 900;
+    font-size: 0.9rem;
+    padding: 12px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+    border: none;
+}
+
+/* Real Post Image Styling */
+.fb-post-media {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fb-post-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image sharp without stretching */
+    transition: transform 0.4s ease;
+}
+
+.fb-post-card:hover .fb-post-img {
+    transform: scale(1.08); /* Smooth zoom on card hover */
+}
+
+/* ==========================================================================
+   DARK GLASS FACEBOOK FEED SHOWCASE
+   ========================================================================== */
+.fb-profile-banner {
+    background: linear-gradient(135deg, rgba(13, 27, 53, 0.8) 0%, rgba(8, 17, 36, 0.95) 100%);
+    border: 1px solid rgba(79, 209, 237, 0.25);
+    border-radius: 16px;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(79, 209, 237, 0.05);
+}
+
+.fb-avatar-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--teal);
+    padding: 6px;
+    box-shadow: 0 0 15px rgba(79, 209, 237, 0.4);
+}
+
+.fb-avatar-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.btn-fb-follow-live {
+    background: #1877F2;
+    color: #ffffff !important;
+    font-weight: 800;
+    font-size: 0.82rem;
+    padding: 10px 22px;
+    border-radius: 8px;
+    letter-spacing: 0.8px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.45);
+}
+
+.btn-fb-follow-live:hover {
+    background: #156fe5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(24, 119, 242, 0.65);
+}
+
+/* Post Cards */
+.fb-card-dark {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(79, 209, 237, 0.15);
+    background: rgba(12, 21, 41, 0.85);
+    border-radius: 16px;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.fb-card-dark:hover {
+    transform: translateY(-8px);
+    border-color: var(--teal);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(79, 209, 237, 0.2);
+}
+
+.fb-card-time {
+    color: #64748b;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* Post Photo Container */
+.fb-card-media {
+    width: 100%;
+    height: 190px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fb-card-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.fb-card-dark:hover .fb-card-photo {
+    transform: scale(1.08);
+}
+
+.fb-likes {
+    color: var(--text-slate);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.fb-view-link {
+    color: var(--teal);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 800;
+    transition: all 0.2s ease;
+}
+
+.fb-view-link:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+    display: inline-block;
+}
