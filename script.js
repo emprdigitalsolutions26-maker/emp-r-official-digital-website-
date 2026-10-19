@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
-                current = "about";
+                current = "contact";
             } else if (window.pageYOffset >= (sectionTop - 150)) {
                 current = section.getAttribute('id');
             }
